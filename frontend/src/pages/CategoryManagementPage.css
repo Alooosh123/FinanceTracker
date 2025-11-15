@@ -1,0 +1,202 @@
+/*
+ * frontend/src/pages/CategoryManagementPage.css
+ * --------------------------------------------
+ * أنماط أساسية لصفحة إدارة الفئات
+ */
+
+.category-management-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    direction: rtl; /* دعم اللغة العربية */
+    text-align: right;
+}
+
+.category-management-page h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --------------------
+ * قسم القوائم
+ * -------------------- */
+
+.category-list h3 {
+    margin-top: 30px;
+    color: #007bff;
+    font-size: 1.4em;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.category-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* --------------------
+ * أنماط نموذج الفئة (CategoryForm.jsx)
+ * -------------------- */
+
+.category-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.category-form h3 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.category-form .form-group {
+    margin-bottom: 15px;
+}
+
+.category-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.category-form input[type="text"],
+.category-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.category-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* وضع الأزرار في اليسار (في تصميم RTL) */
+    margin-top: 20px;
+}
+
+.category-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.category-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+.category-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.category-form .cancel-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.category-form .cancel-button:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.category-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* --------------------
+ * أنماط عنصر الفئة (CategoryItem.jsx)
+ * -------------------- */
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    width: calc(50% - 7.5px); /* نصف العرض مع مراعاة الفجوة */
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-info {
+    flex-grow: 1;
+}
+
+.category-info .name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.category-info .type {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.category-info .type.income {
+    color: #28a745; /* أخضر للدخل */
+    font-weight: 600;
+}
+
+.category-info .type.expense {
+    color: #dc3545; /* أحمر للمصروفات */
+    font-weight: 600;
+}
+
+.category-actions button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-actions .edit-button {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.category-actions .edit-button:hover {
+    background-color: #e0a800;
+}
+
+.category-actions .delete-button {
+    background-color: #dc3545;
+    color: white;
+    margin-right: 0;
+}
+
+.category-actions .delete-button:hover {
+    background-color: #c82333;
+}

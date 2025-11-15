@@ -1,0 +1,96 @@
+/* frontend/src/components/Header.css */
+
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 30px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-header .logo a {
+    font-size: 28px; 
+    font-weight: 700; 
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.nav-group-right {
+    display: flex;
+    align-items: center;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* فاصل عمودي */
+    padding-right: 30px;
+}
+
+.nav-item-link {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-item-link:hover {
+    color: #f0f0f0; /* لون فاتح عند التمرير */
+}
+
+.logout-group {
+    margin-right: 30px; 
+}
+
+.logout-btn {
+    background-color: var(--danger-color);
+    color: var(--white);
+    border: 2px solid var(--white); /* إطار أبيض يبرز الزر */
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* أحمر أغمق قليلاً */
+}
+
+/* 💡 تنسيق قائمة تبديل اللغة */
+.language-select {
+    padding: 8px 15px;
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none; /* إزالة مظهر القائمة المنسدلة الافتراضي للمتصفح */
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.language-select option {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.language-select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

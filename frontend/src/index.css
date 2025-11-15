@@ -1,0 +1,286 @@
+/* frontend/src/index.css */
+
+:root {
+    /* 💡 ألوان أساسية جديدة أكثر حيوية */
+    --primary-color: #4a90e2; /* أزرق عصري */
+    --secondary-color: #6c757d;
+    --success-color: #1abc9c; /* أخضر طبيعي للإيرادات */
+    --danger-color: #e74c3c; /* أحمر واضح للمصروفات */
+    --light-bg: #f5f7fa; /* خلفية فاتحة جداً */
+    --white: #ffffff;
+    --dark-text: #2c3e50; /* لون نص داكن مريح */
+    --border-color: #e0e6ed;
+    
+    /* 💡 ظلال واستدارة جديدة */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05); /* ظل خفيف وناعم */
+    --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px; /* استدارة أكبر للزوايا */
+}
+
+body {
+    font-family: 'Tahoma', 'Arial', sans-serif; 
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 0;
+    color: var(--dark-text);
+    direction: rtl; /* لضمان دعم اللغة العربية بشكل كامل */
+}
+
+.app-container {
+    padding: 20px;
+}
+
+/* ----------------------------------
+ * 1. Auth Page Styles (Login/Register)
+ * ---------------------------------- */
+
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: var(--border-radius); /* 💡 استدارة جديدة */
+    box-shadow: var(--shadow-light); /* 💡 ظل ناعم */
+    text-align: center;
+}
+
+.auth-title {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.auth-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.auth-form button {
+    padding: 12px 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.auth-form button:hover:not(:disabled) {
+    background-color: #3b7ad1; /* لون أزرق أغمق */
+}
+
+.auth-form button:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.toggle-mode {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.toggle-mode span {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ----------------------------------
+ * 2. Dashboard & Summary Styles
+ * ---------------------------------- */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Summary Card Styles */
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px; 
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light); 
+}
+
+.summary-item {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.summary-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.summary-item h4 {
+    margin-top: 0;
+    color: var(--dark-text);
+}
+
+.amount {
+    font-size: 28px; /* 💡 تكبير الخط */
+    font-weight: 700; /* 💡 خط أكثر سماكة */
+    margin: 5px 0 0 0;
+}
+
+/* 💡 الألوان الشرطية (مهم جداً) */
+.green {
+    color: var(--success-color) !important;
+}
+
+.red {
+    color: var(--danger-color) !important;
+}
+
+/* ----------------------------------
+ * 3. Form & List Styles
+ * ---------------------------------- */
+
+.form-section, .transactions-section {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+}
+
+.transaction-form {
+    display: grid;
+    /* (Amount, Date, Desc, Category, Button) 💡 توزيع ديناميكي أكثر مرونة */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) 1.2fr; 
+    gap: 15px;
+    align-items: center;
+}
+
+.transaction-form input, 
+.transaction-form textarea, 
+.transaction-form select {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px; 
+    transition: border-color 0.3s;
+}
+
+.transaction-form input:focus, 
+.transaction-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.transaction-form button {
+    padding: 12px;
+    background-color: var(--success-color); /* استخدام الأخضر الجديد */
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    white-space: nowrap; 
+}
+
+.transaction-form button:hover:not(:disabled) {
+    background-color: #17a488; /* أخضر أغمق قليلاً */
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: var(--secondary-color);
+}
+
+/* ----------------------------------
+ * 4. Transaction Table Styles (الجدول)
+ * ---------------------------------- */
+
+.transactions-table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed; 
+    border-radius: var(--border-radius); 
+    overflow: hidden; 
+}
+
+.transactions-table th,
+.transactions-table td {
+    padding: 15px 18px; 
+    text-align: right; 
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transactions-table th {
+    background-color: #eaf1f7; 
+    color: var(--dark-text);
+    font-weight: 700; 
+}
+
+/* تمييز صفوف البيانات وتأثير التمرير */
+.transactions-table tbody tr:nth-child(even) {
+    background-color: #fcfdff; 
+}
+.transactions-table tbody tr:hover {
+    background-color: #f1f4f8; 
+}
+
+/* 🚨 تصحيح تنسيق عمود المبلغ ليظهر بشكل صحيح */
+.transactions-table .amount {
+    text-align: left; 
+    direction: ltr; /* مهم جداً للأرقام */
+    font-weight: bold;
+}
+
+/* 💡 تنسيق زر الحذف الصلب (المطلوب إبقاؤه) */
+.delete-btn {
+    background-color: var(--danger-color); 
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.1s;
+    white-space: nowrap;
+}
+.delete-btn:hover {
+    background-color: #c0392b; 
+}
+
+/* ----------------------------------
+ * 5. Layout (إلغاء تنسيقات القائمة القديمة)
+ * ---------------------------------- */
+/* تم حذفها لأننا نستخدم الجدول الآن */
+/* .transaction-list, .transaction-item, ... (إلخ) */
